@@ -2,7 +2,7 @@
 Its my own implementation of calculator using php-cli
 Support many feature..
 1. Addition
-2. Subusration
+2. subtraction
 3. Average
 4. Multiplication
 and much more
