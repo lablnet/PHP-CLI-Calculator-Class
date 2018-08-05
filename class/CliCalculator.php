@@ -69,7 +69,7 @@ class CliCalculator
 		$this->main();
 	}	
 	public function sub() {
-		echo "For Substraction \n";
+		echo "For Subtraction \n";
 		echo "Enter first number: ";
 	    $handle = fopen ("php://stdin","r");
 	    $a = fgets($handle);
@@ -81,7 +81,7 @@ class CliCalculator
 	    $b = strtolower(trim($b));
 	    fclose($handle);	
 	    $sub = $a - $b;    
-	    echo "Substraction of ".$a ." - ". $b. " = ". $sub."\n";
+	    echo "Subtraction of ".$a ." - ". $b. " = ". $sub."\n";
 		$this->main();
 	}	
 	public function div() {
