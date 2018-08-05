@@ -1,0 +1,7 @@
+#!/usr/bin/php
+
+<?php
+
+require_once 'class/CliCalculator.php';
+
+(new CliCalculator())->run();
