@@ -9,7 +9,7 @@
  *
  * @link   https://github.com/Lablnet/PHP-CLI-Calculator-Class/
  */
-require_once "OperatingSystem.php";
+require_once 'OperatingSystem.php';
 class CliCalculator
 {
     public function add()
