@@ -1,4 +1,5 @@
 <?php 
+require_once "OperatingSystem.php";
 class CliCalculator
 {
 	
@@ -7,18 +8,12 @@ class CliCalculator
 		(int) $tNum = 0;
 		echo "For Addition \n";
 		echo "Enter first number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $a = fgets($handle);
-	    $a = strtolower(trim($a));
-	    fclose($handle);
+	    $a = $this->cliInput();
 	    while($a != -1) {
 	    	$sum = $sum + $a;
 	    	$tNum++;
 	    	echo "Enter another number enter -1 to calculate ";
-	    	$handle = fopen ("php://stdin","r");
-		    $a = fgets($handle);
-		    $a = strtolower(trim($a));
-		    fclose($handle);
+	    	$a = $this->cliInput();
 	    }
 	    echo "Total number you enter: ".$tNum."\n";
 	    echo "Sum is: ".$sum."\n";
@@ -29,18 +24,12 @@ class CliCalculator
 		(int) $tNum = 0;
 		echo "For Addition \n";
 		echo "Enter first number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $a = fgets($handle);
-	    $a = strtolower(trim($a));
-	    fclose($handle);
+		$a = $this->cliInput();
 	    while($a != -1) {
 	    	$aTotal = $aTotal + $a;
 	    	$tNum++;
 	    	echo "Enter another number enter -1 to calculate ";
-	    	$handle = fopen ("php://stdin","r");
-		    $a = fgets($handle);
-		    $a = strtolower(trim($a));
-		    fclose($handle);
+	    	$a = $this->cliInput();
 	    }
 	    echo "Total number you enter: ".$tNum."\n";
 	    echo "Average is: ".$aTotal."\n";
@@ -51,18 +40,12 @@ class CliCalculator
 		(int) $tNum = 0;
 		echo "For Multiplication \n";
 		echo "Enter first number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $a = fgets($handle);
-	    $a = strtolower(trim($a));
-	    fclose($handle);
+	    $a = $this->cliInput();
 	    while($a != -1) {
 	    	$mul = $mul * $a;
 	    	$tNum++;
 	    	echo "Enter another number enter -1 to calculate ";
-	    	$handle = fopen ("php://stdin","r");
-		    $a = fgets($handle);
-		    $a = strtolower(trim($a));
-		    fclose($handle);
+	    	$a = $this->cliInput();
 	    }
 	    echo "Total number you enter: ".$tNum."\n";
 	    echo "Multiply is: ".$mul."\n";
@@ -71,15 +54,9 @@ class CliCalculator
 	public function sub() {
 		echo "For Subtraction \n";
 		echo "Enter first number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $a = fgets($handle);
-	    $a = strtolower(trim($a));
-	    fclose($handle);
+		$a = $this->cliInput();
 	    echo "\n Enter 2nd number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $b = fgets($handle);
-	    $b = strtolower(trim($b));
-	    fclose($handle);	
+	    $b = $this->cliInput();
 	    $sub = $a - $b;    
 	    echo "Subtraction of ".$a ." - ". $b. " = ". $sub."\n";
 		$this->main();
@@ -87,15 +64,9 @@ class CliCalculator
 	public function div() {
 		echo "For Division \n";
 		echo "Enter first number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $a = fgets($handle);
-	    $a = strtolower(trim($a));
-	    fclose($handle);
+	    $a = $this->cliInput();
 	    echo "\n Enter 2nd number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $b = fgets($handle);
-	    $b = strtolower(trim($b));
-	    fclose($handle);	
+	    $b = $this->cliInput();	
 	    $div = $a / $b;    
 	    echo "Division of ".$a ." / ". $b. " = ". $div."\n";
 		$this->main();
@@ -103,15 +74,9 @@ class CliCalculator
 	public function rem() {
 		echo "For Reaminder \n";
 		echo "Enter first number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $a = fgets($handle);
-	    $a = strtolower(trim($a));
-	    fclose($handle);
+	    $a = $this->cliInput();
 	    echo "\n Enter 2nd number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $b = fgets($handle);
-	    $b = strtolower(trim($b));
-	    fclose($handle);	
+	    $b = $this->cliInput();
 	    $rem = $a % $b;    
 	    echo "Reaminder of ".$a ." % ". $b. " = ". $rem."\n";
 		$this->main();
@@ -119,15 +84,9 @@ class CliCalculator
 	public function per() {
 		echo "For Reaminder \n";
 		echo "Enter first number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $a = fgets($handle);
-	    $a = strtolower(trim($a));
-	    fclose($handle);
+	    $a = $this->cliInput();
 	    echo "\n Enter 2nd number: ";
-	    $handle = fopen ("php://stdin","r");
-	    $b = fgets($handle);
-	    $b = strtolower(trim($b));
-	    fclose($handle);	
+	    $b = $this->cliInput();
 	    $per = 100 * $a / $b;    
 	    echo "Percentage is ". $per."\n";
 		$this->main();
@@ -144,10 +103,7 @@ class CliCalculator
 		    echo " For percentage enter 'p' \n";
 		    echo " For reaminder enter 'e' \n";
 		    echo " ***************************** \n";
-		    $handle = fopen ("php://stdin","r");
-		    $x = fgets($handle);
-		    $x = strtolower(trim($x));
-		    fclose($handle);
+		    $x = strtolower($this->cliInput());
 		    if ($x === 'a') {
 		        $this->add();
 		    } elseif ($x === 's') {
@@ -171,4 +127,23 @@ class CliCalculator
 	public function run() {
 		$this->main();
 	}
+	public function oS()
+	{
+		return (new OperatingSystem())->get();
+	}
+	public function cliInput() {
+	  if ( $this->oS() === 'WINNT' OR $this->oS() === 'Windows' ) {
+		echo '? ';
+		$x = stream_get_line(STDIN, 1024, PHP_EOL);
+		if (!empty($x)) {
+			return $x;
+		}
+	  }
+	  else {
+		$x = readline('? ');
+		if (!empty($x)) {
+			return $x;
+		}		
+	  }		
+	}	
 }
